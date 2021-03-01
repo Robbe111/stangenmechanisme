@@ -18,8 +18,6 @@ function F=loop_closure_eqs(phi_init,phi3,L1,L2,L3,L4,l3,l4,L5,l5,L6,L7,l7,L8,ph
 % argument phi2: input angle phi2 for which we want to calculate the unknown angles phi3 and phi4
 % arguments a1 ... phi1: constants
 
-theta3 = phi3 + deg2rad(80);
-theta4 = phi4 - deg2rad(100);
 
 % copy initial values of unknown angles phi3 and phi4
 phi2=phi_init(1);
@@ -28,6 +26,9 @@ phi5=phi_init(3);
 phi6=phi_init(4);
 phi7=phi_init(5);
 phi8=phi_init(6);
+
+theta3 = phi3 + deg2rad(80);
+theta4 = phi4 - deg2rad(100);
 % loop closure equations:
 F(1)= L3*cos(phi3) + l5*cos(phi5) - L6*cos(phi6) - L4*cos(phi4) - L1;
 F(2)=L3*sin(phi3) + L5*sin(phi5) - L6*sin(phi6) - L4*sin(phi4);

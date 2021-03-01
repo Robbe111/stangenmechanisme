@@ -28,7 +28,7 @@ L1 = 1;
 L2 = 1;
 L3 = 0.3;
 l3 = 0.15;
-L4 = 0.3;
+L4 = 0.35;
 l4 = 0.15;
 L5 = 2;
 l5 = 1.5;
@@ -69,7 +69,7 @@ phi4_init = deg2rad(337);
 phi5_init = deg2rad(25);
 phi6_init = deg2rad(140);
 phi7_init = deg2rad(140);
-phi8_init = deg2rad(25);;
+phi8_init = deg2rad(25);
 
 
 
@@ -81,8 +81,8 @@ t = [t_begin:Ts:t_end]';       % time vector
 % initialization of driver
 omega = 0.5;
 A = 1;
-phi3= 5.5 + omega * t;
-dphi3= omega;
+phi3= 2.5 + omega * t;
+dphi3= omega * ones(315,1) ;
 ddphi3=zeros(315,1);
 
 % calculation of the kinematics (see kin_4bar.m)
@@ -96,15 +96,15 @@ ddphi3=zeros(315,1);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % calculation of the dynamics (see dyn_4bar.m)
-[F_P_x,F_Q_x,F_R_x,F_S_x,F_P_y,F_Q_y,F_R_y,F_S_y,M_P] = dynamics_4bar(phi2,phi3,phi4,dphi2,dphi3,dphi4,ddphi2,ddphi3,ddphi4,r2,r3,r4, ...
-  m2,m3,m4,X2,X3,X4,Y2,Y3,Y4,J2,J3,J4,t,fig_dyn_4bar);
+% [F_P_x,F_Q_x,F_R_x,F_S_x,F_P_y,F_Q_y,F_R_y,F_S_y,M_P] = dynamics_4bar(phi2,phi3,phi4,dphi2,dphi3,dphi4,ddphi2,ddphi3,ddphi4,r2,r3,r4, ...
+%   m2,m3,m4,X2,X3,X4,Y2,Y3,Y4,J2,J3,J4,t,fig_dyn_4bar);
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % STEP 3. Movie
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-figure
-load fourbar_movie Movie
-movie(Movie)
+% figure
+% load fourbar_movie Movie
+% movie(Movie)
 
