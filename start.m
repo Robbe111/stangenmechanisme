@@ -41,22 +41,32 @@ phi1 = 0;
 
 
 
-% dynamic parameters, defined in a local frame on each of the bars.
-% X2 = r2/2;               % X coordinates of cog (centre of gravity)
-% X3 = r3/2;
-% X4 = r4/2;
-% 
-% Y2 = 0;                  % Y coordinates of cog
-% Y3 = 0.0102362;
-% Y4 = 0;
-% 
-% m2 = r2*1.76;
-% m3 = r3*1.76;
-% m4 = r4*0.54;
-% 
-% J2 = m2*r2^2/12;
-% J3 = m3*r3^2/12;
-% J4 = m4*r4^2/12;
+dynamic parameters, defined in a local frame on each of the bars.
+
+
+m2 = L2*1.76;
+m3 = 3;
+m4 = 3;
+m5 = L5*1.76;
+m6 = L6*1.76;
+m7 = L7*1.76;
+m8 = L8*1.76;
+
+a3 = L3*sin(deg2rad(10));
+h3 = L3*cos(deg2rad(10));
+b3 = l3;
+
+a4 = -L4*sin(deg2rad(10));
+h4 = L4*cos(deg2rad(10));
+b4 = b3;
+
+J2 = m2*L2^2/12;
+J3 = m3*(h3*b3^3+h3*a3*b3^2+h3*a3^2*b3+b3*h3^3)/12;
+J5 = m5*L5^2/12;
+J4 = m4*(h4*b4^3+h4*a4*b4^2+h4*a4^2*b4+b4*h4^3)/12;
+J6 = m6*L6^2/12;
+J7 = m7*L7^2/12;
+J8 = m8*L8^2/12;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -95,9 +105,10 @@ ddphi3=zeros(315,1);
 % STEP 2. Dynamics Calculation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% calculation of the dynamics (see dyn_4bar.m)
-% [F_P_x,F_Q_x,F_R_x,F_S_x,F_P_y,F_Q_y,F_R_y,F_S_y,M_P] = dynamics_4bar(phi2,phi3,phi4,dphi2,dphi3,dphi4,ddphi2,ddphi3,ddphi4,r2,r3,r4, ...
-%   m2,m3,m4,X2,X3,X4,Y2,Y3,Y4,J2,J3,J4,t,fig_dyn_4bar);
+calculation of the dynamics (see dyn_4bar.m)
+[F_P_x,F_Q_x,F_R_x,F_S_x,F_T_x,F_U_x,F_V_x,F_W_x,F_X_x,F_P_y,F_Q_y,F_R_y,F_S_y,F_T_y,F_U_y,F_V_y,F_W_y,F_X_y,M_P] = dynamics_4bar(phi2,phi4,phi5,phi6,phi7,phi8,dphi2,dphi4,dphi5,dphi6,dphi7,dphi8,ddphi2,ddphi4,ddphi5,ddphi6,ddphi7,ddphi8 ...
+                                                                                                    ,L1,L2,L3,L4,l3,l4,L5,l5,L6,L7,l7,L8, ...
+                                                                                                        m2,m3,m4,m5,m6,m7,m8,J2,J3,J4,J5,J6,J7,J8,t,fig_dyn_4bar);
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -121,7 +121,7 @@ for k=1:t_size
           L2*sin(phi2(k))*dphi2(k)^2 - l4*sin(phi4(k))*dphi4(k)^2 + L3*sin(phi3(k))*dphi3(k)^2
           ];
       
-     x = A\B
+     y = A\B;
           
 %     
 %     A = [-r3*sin(phi3(k)),  r4*sin(phi4(k));
@@ -134,12 +134,12 @@ for k=1:t_size
 %     ddphi3(k) = x(1);
 %     ddphi4(k) = x(2);
 
-    ddphi2(k)=x(1);
-    ddphi5(k)=x(2);
-    ddphi6(k)=x(3);
-    ddphi7(k)=x(4);
-    ddphi8(k)=x(5);
-    ddphi4(k)=x(6);
+    ddphi2(k)=y(1);
+    ddphi5(k)=y(2);
+    ddphi6(k)=y(3);
+    ddphi7(k)=y(4);
+    ddphi8(k)=y(5);
+    ddphi4(k)=y(6);
     
     
     % *** calculate initial values for next iteration step ***
