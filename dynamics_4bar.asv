@@ -188,17 +188,20 @@ for k=1:t_size
         m4*acc_4y(k);
         J4*ddphi4(k);
         m8*acc_8x(k);
-        m8*acc_8y(k);
-        J8*ddphi8(k);
-        m5*acc_5x(k);
-        m5*acc_5y(k);
-        J5*ddphi5(k);
-        m6*acc_6x(k);
-        m6*acc_6y(k);
-        J6*ddphi6(k);
-        m7*acc_7x(k);
-        m7*acc_7y(k);
-        J7*ddphi7(k)];
+        m4*acc_4y(k);
+        J4*ddphi4(k);
+        m4*acc_4x(k);
+        m4*acc_4y(k);
+        J4*ddphi4(k);
+        m4*acc_4x(k);
+        m4*acc_4y(k);
+        J4*ddphi4(k);
+        m4*acc_4x(k);
+        m4*acc_4y(k);
+        J4*ddphi4(k);
+        m4*acc_4x(k);
+        m4*acc_4y(k);
+        J4*ddphi4(k)];
     
     
     
