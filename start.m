@@ -41,7 +41,7 @@ phi1 = 0;
 
 
 
-dynamic parameters, defined in a local frame on each of the bars.
+%dynamic parameters, defined in a local frame on each of the bars.
 
 
 m2 = L2*1.76;
@@ -105,8 +105,8 @@ ddphi3=zeros(315,1);
 % STEP 2. Dynamics Calculation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-calculation of the dynamics (see dyn_4bar.m)
-[F_P_x,F_Q_x,F_R_x,F_S_x,F_T_x,F_U_x,F_V_x,F_W_x,F_X_x,F_P_y,F_Q_y,F_R_y,F_S_y,F_T_y,F_U_y,F_V_y,F_W_y,F_X_y,M_P] = dynamics_4bar(phi2,phi4,phi5,phi6,phi7,phi8,dphi2,dphi4,dphi5,dphi6,dphi7,dphi8,ddphi2,ddphi4,ddphi5,ddphi6,ddphi7,ddphi8 ...
+%calculation of the dynamics (see dyn_4bar.m)
+[F_P_x,F_Q_x,F_R_x,F_S_x,F_T_x,F_U_x,F_V_x,F_W_x,F_X_x,F_P_y,F_Q_y,F_R_y,F_S_y,F_T_y,F_U_y,F_V_y,F_W_y,F_X_y,M_P] = dynamics_4bar(phi2,phi3,phi4,phi5,phi6,phi7,phi8,dphi2,dphi3,dphi4,dphi5,dphi6,dphi7,dphi8,ddphi2,ddphi3,ddphi4,ddphi5,ddphi6,ddphi7,ddphi8 ...
                                                                                                     ,L1,L2,L3,L4,l3,l4,L5,l5,L6,L7,l7,L8, ...
                                                                                                         m2,m3,m4,m5,m6,m7,m8,J2,J3,J4,J5,J6,J7,J8,t,fig_dyn_4bar);
 
