@@ -31,7 +31,7 @@ theta3 = phi3 + deg2rad(80);
 theta4 = phi4 - deg2rad(100);
 % loop closure equations:
 F(1)= L3*cos(phi3) + l5*cos(phi5) - L6*cos(phi6) - L4*cos(phi4) - L1;
-F(2)=L3*sin(phi3) + L5*sin(phi5) - L6*sin(phi6) - L4*sin(phi4);
+F(2)=L3*sin(phi3) + l5*sin(phi5) - L6*sin(phi6) - L4*sin(phi4);
 F(3)=l3*cos(theta3) + L2 * cos(phi2) - l4*cos(theta4) - L1;
 F(4)=l3 *sin(theta3) + L2* sin(phi2) - l4*sin(theta4);
 F(5)=L3*cos(phi3) + L5*cos(phi5) - l7*cos(phi7) - L8*cos(phi8) - L4*cos(phi4) - L1;

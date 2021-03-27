@@ -81,8 +81,8 @@ for k=1:t_size
          0, L5*cos(phi5(k)), 0, -l7*cos(phi7(k)), -L8*cos(phi8(k)), -L4*cos(phi4(k));
          0, -l5*sin(phi5(k)), L6*sin(phi6(k)), 0,       0,        L4*sin(phi4(k));
          0, l5*cos(phi5(k)), -L6*cos(phi6(k)), 0,       0,        -L4*cos(phi4(k));
-         -L2*sin(phi2(k)),0,                0,  0,       0,        l4*sin(phi4(k)); 
-         L2*cos(phi2(k)),0,                0,  0,       0,        -l4*cos(phi4(k)); 
+         -L2*sin(phi2(k)),0,                0,  0,       0,        l4*sin(theta4(k)); 
+         L2*cos(phi2(k)),0,                0,  0,       0,        -l4*cos(theta4(k)); 
          ];
     B = [ L3*sin(phi3(k))*dphi3(k);
           -L3*cos(phi3(k))*dphi3(k);
@@ -109,16 +109,16 @@ for k=1:t_size
          0, L5*cos(phi5(k)), 0, -l7*cos(phi7(k)), -L8*cos(phi8(k)), -L4*cos(phi4(k));
          0, -l5*sin(phi5(k)), L6*sin(phi6(k)), 0,       0,        L4*sin(phi4(k));
          0, l5*cos(phi5(k)), -L6*cos(phi6(k)), 0,       0,        -L4*cos(phi4(k));
-         -L2*sin(phi2(k)),0,                0,  0,       0,        l4*sin(phi4(k)); 
-         L2*cos(phi2(k)),0,                0,  0,       0,        -l4*cos(phi4(k)); 
+         -L2*sin(phi2(k)),0,                0,  0,       0,        l4*sin(theta4(k)); 
+         L2*cos(phi2(k)),0,                0,  0,       0,        -l4*cos(theta4(k)); 
          ];
      
      B = [L5*cos(phi5(k))*dphi5(k)^2 - l7*cos(phi7(k))*dphi7(k)^2 - L8*cos(phi8(k))*dphi8(k)^2 - L4*cos(phi4(k))*dphi4(k)^2 + L3*cos(phi3(k))*dphi3(k)^2;
           L5*sin(phi5(k))*dphi5(k)^2 - l7*sin(phi7(k))*dphi7(k)^2 - L8*sin(phi8(k))*dphi8(k)^2 - L4*sin(phi4(k))*dphi4(k)^2 + L3*sin(phi3(k))*dphi3(k)^2;
           l5*cos(phi5(k))*dphi5(k)^2 - L6*cos(phi6(k))*dphi6(k)^2 - L4*cos(phi4(k))*dphi4(k)^2 + L3*cos(phi3(k))*dphi3(k)^2;
           l5*sin(phi5(k))*dphi5(k)^2 - L6*sin(phi6(k))*dphi6(k)^2 - L4*sin(phi4(k))*dphi4(k)^2 + L3*sin(phi3(k))*dphi3(k)^2;
-          L2*cos(phi2(k))*dphi2(k)^2 - l4*cos(phi4(k))*dphi4(k)^2 + L3*cos(phi3(k))*dphi3(k)^2;
-          L2*sin(phi2(k))*dphi2(k)^2 - l4*sin(phi4(k))*dphi4(k)^2 + L3*sin(phi3(k))*dphi3(k)^2
+          L2*cos(phi2(k))*dphi2(k)^2 - l4*cos(theta4(k))*dphi4(k)^2 + L3*cos(phi3(k))*dphi3(k)^2;
+          L2*sin(phi2(k))*dphi2(k)^2 - l4*sin(theta4(k))*dphi4(k)^2 + L3*sin(phi3(k))*dphi3(k)^2
           ];
       
      y = A\B;
