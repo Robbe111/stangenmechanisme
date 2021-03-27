@@ -20,7 +20,7 @@ close all
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % program data
-fig_kin_4bar = 1;        % draw figures of kinematic analysis if 1
+fig_kin_4bar = 0;        % draw figures of kinematic analysis if 1
 fig_dyn_4bar = 1;        % draw figures of dynamic analysis if 1
 
 % kinematic parameters (link lengths)
@@ -31,7 +31,7 @@ l3 = 0.15;
 L4 = 0.35;
 l4 = 0.15;
 L5 = 2;
-l5 = 1.5;
+l5 = 1.2;
 l7 = 1.2;
 L6 = 1.2;
 L8 = L5 - l5;
@@ -84,7 +84,7 @@ phi8_init = deg2rad(25);
 
 
 t_begin = 0;                   % start time of simulation
-t_end = pi;                    % end time of simulation
+t_end = 100;                    % end time of simulation
 Ts = 0.01;                     % time step of simulation
 t = [t_begin:Ts:t_end]';       % time vector
 
@@ -92,8 +92,8 @@ t = [t_begin:Ts:t_end]';       % time vector
 omega = 0.5;
 A = 1;
 phi3= 2.5 + omega * t;
-dphi3= omega * ones(315,1) ;
-ddphi3=zeros(315,1);
+dphi3= omega * ones(size(t,1),1) ;
+ddphi3=zeros(size(t,1),1);
 
 % calculation of the kinematics (see kin_4bar.m)
 [phi2,phi4,phi5,phi6,phi7,phi8,dphi2,dphi4,dphi5,dphi6,dphi7,dphi8,ddphi2,ddphi4,ddphi5,ddphi6,ddphi7,ddphi8] = ... 
@@ -115,7 +115,7 @@ ddphi3=zeros(315,1);
 % STEP 3. Movie
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% figure
-% load fourbar_movie Movie
-% movie(Movie)
+figure
+load fourbar_movie Movie
+movie(Movie)
 
