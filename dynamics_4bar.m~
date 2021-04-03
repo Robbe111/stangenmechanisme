@@ -332,24 +332,6 @@ if fig_dyn_4bar
     xlabel('F_Q_x [N]')
     ylabel('F_Q_y [N]')
     axis tight
-    
-    figure
-    subplot(221)
-    plot(F_R_x,F_R_y),grid
-    xlabel('F_R_x [N]')
-    ylabel('F_R_y [N]')
-    axis tight
-    subplot(222)
-    plot(F_S_x,F_S_y),grid
-    xlabel('F_S_x [N]')
-    ylabel('F_S_y [N]')
-    axis tight
-    subplot(223)
-    plot(F_T_x,F_T_y),grid
-    xlabel('F_T_x [N]')
-    ylabel('F_T_y [N]')
-    axis tight
-    
    
     figure
     subplot(311)
@@ -381,7 +363,7 @@ if fig_dyn_4bar
     subplot(313)
     plot(t,F_T_x,'r',t,F_T_y,'y')
     xlabel('t')
-    ylabel('F_T')    
+    ylabel('F_Q')    
     
     figure
     plot(t,M_P)
