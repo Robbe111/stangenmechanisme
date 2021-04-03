@@ -244,7 +244,7 @@ for k=1:t_size
     x = A\B;
     % x = [F13x F13y F32x F32y F35x F35y F24x F24y F14x F14y F46x F46y F68x
          % F68y F84x F84y F87x F87y F56x F56y F57x F57y M]
-% 
+
     % save results
     F_P_x(k) = x(1);
     F_P_y(k) = x(2);
@@ -279,15 +279,7 @@ for k=1:t_size
     
     
     
-%     F_P_x(k) = x(1);
-%     F_P_y(k) = x(2);
-%     F_Q_x(k) = x(3);
-%     F_Q_y(k) = x(4);
-%     F_R_x(k) = x(5);
-%     F_R_y(k) = x(6);
-%     F_S_x(k) = x(7);
-%     F_S_y(k) = x(8);
-%     M_P(k)   = x(9);
+
 end
 
 
@@ -299,37 +291,28 @@ end
 if fig_dyn_4bar
     
     figure
-    subplot(221)
+    subplot(311)
     plot(F_P_x,F_P_y),grid
     xlabel('F_P_x [N]')
     ylabel('F_P_y [N]')
     axis tight
-    subplot(222)
+    subplot(312)
     plot(F_X_x,F_X_y),grid
     xlabel('F_X_x [N]')
     ylabel('F_X_y [N]')
     axis tight
-    subplot(223)
+    subplot(313)
     plot(F_Q_x,F_Q_y),grid
     xlabel('F_Q_x [N]')
     ylabel('F_Q_y [N]')
     axis tight
-   
+    
     figure
-    subplot(311)
-    plot(t,F_P_x,'r',t,F_P_y,'y')
+    subplot(331)
+    plot(t,F_P_x)
     xlabel('t')
-    ylabel('F_P')
+    ylabel('
     
-    subplot(312)
-    plot(t,F_X_x,'r',t,F_X_y,'y')
-    xlabel('t')
-    ylabel('F_X')
-    
-    subplot(313)
-    plot(t,F_Q_x,'r',t,F_Q_y,'y')
-    xlabel('t')
-    ylabel('F_Q')
 
     
     figure
