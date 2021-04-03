@@ -84,7 +84,7 @@ phi8_init = deg2rad(25);
 
 
 t_begin = 0;                   % start time of simulation
-t_end = 100;                    % end time of simulation
+t_end = 14;                    % end time of simulation
 Ts = 0.01;                     % time step of simulation
 t = [t_begin:Ts:t_end]';       % time vector
 

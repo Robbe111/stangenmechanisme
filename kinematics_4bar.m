@@ -220,56 +220,56 @@ close(10)
 
 % *** plot figures ***
 
-if fig_kin_4bar
-    
-    plot assembly at a certain timestep 
-    index = 1; %select 1st timestep
-    P = 0;
-    S = r1*exp(j*phi1);
-    Q = P + r2 * exp(j*phi2(index));
-    R = Q + r3 * exp(j*phi3(index));
-    
-    figure
-    assembly=[P, Q, R, S];
-    plot(real(assembly),imag(assembly),'ro-')
-    xlabel('[m]')
-    ylabel('[m]')
-    title('assembly')
-    axis equal
-    
-    figure
-    subplot(311)
-    plot(t,phi2)
-    ylabel('\phi_2 [rad]')
-    subplot(312)
-    plot(t,phi3)
-    ylabel('\phi_3 [rad]')
-    subplot(313)
-    plot(t,phi4)
-    ylabel('\phi_4 [rad]')
-    xlabel('t [s]')
-    
-    figure
-    subplot(311)
-    plot(t,dphi2)
-    ylabel('d\phi_2 [rad/s]')
-    subplot(312)
-    plot(t,dphi3)
-    ylabel('d\phi_3 [rad/s]')
-    subplot(313)
-    plot(t,dphi4)
-    ylabel('d\phi_4 [rad/s]')
-    xlabel('t [s]')
-    
-    figure
-    subplot(311)
-    plot(t,ddphi2)
-    ylabel('dd\phi_2 [rad/s^2]')
-    subplot(312)
-    plot(t,ddphi3)
-    ylabel('dd\phi_3 [rad/s^2]')
-    subplot(313)
-    plot(t,ddphi4)
-    ylabel('dd\phi_4 [rad/s^2]')
-    xlabel('t [s]')
+% if fig_kin_4bar
+%     
+%     plot assembly at a certain timestep 
+%     index = 1; %select 1st timestep
+%     P = 0;
+%     S = r1*exp(j*phi1);
+%     Q = P + r2 * exp(j*phi2(index));
+%     R = Q + r3 * exp(j*phi3(index));
+%     
+%     figure
+%     assembly=[P, Q, R, S];
+%     plot(real(assembly),imag(assembly),'ro-')
+%     xlabel('[m]')
+%     ylabel('[m]')
+%     title('assembly')
+%     axis equal
+%     
+%     figure
+%     subplot(311)
+%     plot(t,phi2)
+%     ylabel('\phi_2 [rad]')
+%     subplot(312)
+%     plot(t,phi3)
+%     ylabel('\phi_3 [rad]')
+%     subplot(313)
+%     plot(t,phi4)
+%     ylabel('\phi_4 [rad]')
+%     xlabel('t [s]')
+%     
+%     figure
+%     subplot(311)
+%     plot(t,dphi2)
+%     ylabel('d\phi_2 [rad/s]')
+%     subplot(312)
+%     plot(t,dphi3)
+%     ylabel('d\phi_3 [rad/s]')
+%     subplot(313)
+%     plot(t,dphi4)
+%     ylabel('d\phi_4 [rad/s]')
+%     xlabel('t [s]')
+%     
+%     figure
+%     subplot(311)
+%     plot(t,ddphi2)
+%     ylabel('dd\phi_2 [rad/s^2]')
+%     subplot(312)
+%     plot(t,ddphi3)
+%     ylabel('dd\phi_3 [rad/s^2]')
+%     subplot(313)
+%     plot(t,ddphi4)
+%     ylabel('dd\phi_4 [rad/s^2]')
+%     xlabel('t [s]')
 end
