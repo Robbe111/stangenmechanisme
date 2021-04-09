@@ -203,7 +203,9 @@ t_size = size(t,1);    % number of simulation steps¨
          % F68y F84x F84y F87x F87y F56x F56y F57x F57y M]
 % 
 for k=1:t_size
-   A = [ 0          0           -1            0            0            0            1           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0   0;%stang 2 
+        % F_P_x(k)   F_P_y(k)    F_X_x(k)    F_X_y(k)    F_Q_x(k)     F_Q_y(k)    F_W_x(k)    F_W_y(k)     F_V_x(k)   F_V_y(k)   F_U4_x(k)    F_U4_y(k)    F_U6_x(k)  F_U6_y(k)   F_U8_x(k)   F_U8_y(k)   F_T_x(k)    F_T_y(k)    F_R_x(k)    F_R_y(k)    F_S_x(k)    F_S_y(k) 
+    
+    A = [ 0          0           -1            0            0            0            1           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0   0;%stang 2 
         0           0            0           -1            0            0            0           1           0           0           0           0           0           0           0           0           0           0           0           0           0           0   0;
         0           0            cog2_X_y(k)  -cog2_X_x(k) 0            0           -cog2_W_y(k) cog2_W_x(k) 0           0           0           0           0           0           0           0           0           0           0           0           0           0   0;
         
@@ -353,35 +355,131 @@ if fig_dyn_4bar
    
     figure
     subplot(311)
-    plot(t,F_P_x,'r',t,F_P_y,'y')
-    xlabel('t')
-    ylabel('F_P')
+    plot(t,F_P_x,'r')
+    xlabel('t[s]')
+    ylabel('F_P_x[N]')
     
     subplot(312)
-    plot(t,F_X_x,'r',t,F_X_y,'y')
-    xlabel('t')
-    ylabel('F_X')
+    plot(t,F_X_x,'r')
+    xlabel('t[s]')
+    ylabel('F_X_x[N]')
     
     subplot(313)
-    plot(t,F_Q_x,'r',t,F_Q_y,'y')
-    xlabel('t')
-    ylabel('F_Q')
-
+    plot(t,F_Q_x,'r')
+    xlabel('t[s]')
+    ylabel('F_Q_x[N]')
+    
+    figure 
+    subplot(311)
+    plot(t,F_P_y,'r')
+    xlabel('t[s]')
+    ylabel('F_P_y[N]')
+    
+    subplot(312)
+    plot(t,F_X_y,'r')
+    xlabel('t[s]')
+    ylabel('F_X_y[N]')
+    
+    subplot(313)
+    plot(t,F_Q_y,'r')
+    xlabel('t[s]')
+    ylabel('F_Q_y[N]')
+    
+    
+    
+    
+    
     figure
     subplot(311)
-    plot(t,F_R_x,'r',t,F_R_y,'y')
-    xlabel('t')
-    ylabel('F_R')
+    plot(t,F_R_x,'r')
+    xlabel('t[s]')
+    ylabel('F_R_x[N]')
     
     subplot(312)
-    plot(t,F_S_x,'r',t,F_S_y,'y')
-    xlabel('t')
-    ylabel('F_S')
+    plot(t,F_S_x,'r')
+    xlabel('t[s]')
+    ylabel('F_S_x[N]')
     
     subplot(313)
-    plot(t,F_T_x,'r',t,F_T_y,'y')
-    xlabel('t')
-    ylabel('F_T')    
+    plot(t,F_T_x)
+    xlabel('t[s]')
+    ylabel('F_T_x[N]')    
+    
+    figure 
+    subplot(311)
+    plot(t,F_R_y,'r')
+    xlabel('t[s]')
+    ylabel('F_R_y[N]')
+    
+    subplot(312)
+    plot(t,F_S_y,'r')
+    xlabel('t[s]')
+    ylabel('F_S_y[N]')
+    
+    subplot(313)
+    plot(t,F_T_y)
+    xlabel('t[s]')
+    ylabel('F_T_y[N]')  
+    
+    figure
+    subplot(311)
+    plot(t,F_U4_x,'r')
+    xlabel('t[s]')
+    ylabel('F_U4_x[N]')
+    
+    subplot(312)
+    plot(t,F_U6_x,'r')
+    xlabel('t[s]')
+    ylabel('F_U6_x[N]')
+    
+    subplot(313)
+    plot(t,F_U8_x)
+    xlabel('t[s]')
+    ylabel('F_U8_x[N]')    
+    
+    figure 
+    subplot(311)
+    plot(t,F_U4_y,'r')
+    xlabel('t[s]')
+    ylabel('F_U4_y[N]')
+    
+    subplot(312)
+    plot(t,F_U6_y,'r')
+    xlabel('t[s]')
+    ylabel('F_U6_y[N]')
+    
+    subplot(313)
+    plot(t,F_U8_y)
+    xlabel('t[s]')
+    ylabel('F_U8_y[N]')
+    
+    figure
+    subplot(221)
+    plot(t,F_V_x)
+    xlabel('t[s]')
+    ylabel('F_V_x[N]')
+    
+    subplot(222)
+    plot(t,F_V_y)
+    xlabel('t[s]')
+    ylabel('F_V_y[N]')
+    
+    
+    subplot(223)
+    plot(t,F_W_x)
+    xlabel('t[s]')
+    ylabel('F_W_x[N]')
+    
+    
+    subplot(224)
+    plot(t,F_W_y)
+    xlabel('t[s]')
+    ylabel('F_W_y[N]')
+    
+    
+    
+    
+    
     
     figure
     plot(t,M_P)
